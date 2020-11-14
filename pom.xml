@@ -23,6 +23,7 @@
 		<veloctity-version>2.2</veloctity-version>
 		<druid.version>1.2.2</druid.version>
 		<fastjson.version>1.2.74</fastjson.version>
+		<jwt.version>0.9.1</jwt.version>
 	</properties>
 
 	<dependencies>
@@ -98,6 +99,13 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
+		</dependency>
+
+		<!--Token生成与解析-->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>${jwt.version}</version>
 		</dependency>
 	</dependencies>
 

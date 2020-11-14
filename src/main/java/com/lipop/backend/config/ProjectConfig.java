@@ -1,5 +1,6 @@
 package com.lipop.backend.config;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -20,4 +21,16 @@ public class ProjectConfig {
 
     /** 版本 */
     private String version;
+
+
+    @Setter
+    @Getter
+    @Component
+    @ConfigurationProperties(
+            prefix = "project.configuration.auth"
+    )
+    public static class Auth {
+        private Boolean login;
+    }
+
 }
