@@ -8,8 +8,7 @@ project:
   configuration:
     auth:
       login: true
-      role: true
-
+      security: true
 
 
 # token配置
@@ -88,3 +87,6 @@ spring:
             multi-statement-allow: true
   mvc:
     static-path-pattern: /**
+
+server:
+  port: 8081

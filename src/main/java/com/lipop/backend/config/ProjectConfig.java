@@ -1,5 +1,6 @@
 package com.lipop.backend.config;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,14 +13,17 @@ import org.springframework.stereotype.Component;
  * @create 2020-11-12 22:44
  */
 @Component
-@Getter
-@Setter
+@Data
 @ConfigurationProperties(prefix = "project")
 public class ProjectConfig {
-    /** 项目名称 */
+    /**
+     * 项目名称
+     */
     private String name;
 
-    /** 版本 */
+    /**
+     * 版本
+     */
     private String version;
 
 
@@ -31,6 +35,7 @@ public class ProjectConfig {
     )
     public static class Auth {
         private Boolean login;
+        private Boolean security;
     }
 
 }
