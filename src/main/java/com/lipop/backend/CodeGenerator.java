@@ -44,13 +44,13 @@ public class CodeGenerator {
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
-        String dbUrl = "jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
+        String dbUrl = "jdbc:h2:file:./db/halo";
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
-        dataSourceConfig.setDbType(DbType.MYSQL)
+        dataSourceConfig.setDbType(DbType.H2)
                 .setUrl(dbUrl)
-                .setUsername("root")
+                .setUsername("admin")
                 .setPassword("123456")
-                .setDriverName("com.mysql.cj.jdbc.Driver");
+                .setDriverName("org.h2.Driver");
         mpg.setDataSource(dataSourceConfig);
 
         // 策略配置
