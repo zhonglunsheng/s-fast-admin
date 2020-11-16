@@ -10,8 +10,10 @@ project:
   # 功能开启
   configuration:
     auth:
+      # 是否启用jwt登录
       login: true
-      security: true
+      # 是否开启Spring security
+      security: false
 
 
 # token配置
@@ -98,3 +100,7 @@ spring:
       enabled: true
   mvc:
     static-path-pattern: /**
+logging:
+  level:
+    # 修复swagger 异常 https://blog.csdn.net/qq_35735865/article/details/86711871
+    io.swagger.models.parameters.AbstractSerializableParameter: error

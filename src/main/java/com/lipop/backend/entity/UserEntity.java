@@ -1,26 +1,46 @@
 package com.lipop.backend.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
+ * <p>
+ * 
+ * </p>
+ *
  * @author zhonglunsheng
- * @Description
- * @create 2020-11-12 22:59
+ * @since 2020-11-16
  */
 @Data
-@ApiModel(value = "UserEntity", description = "用户实体")
-public class UserEntity {
-    @ApiModelProperty("用户ID")
-    private Integer userId;
+@EqualsAndHashCode(callSuper = false)
+@TableName("T_DATA_USER")
+@ApiModel(value="UserEntity对象", description="")
+public class UserEntity extends Model<UserEntity> {
 
-    @ApiModelProperty("用户名称")
-    private String username;
+    private static final long serialVersionUID=1L;
 
-    @ApiModelProperty("用户密码")
+    @ApiModelProperty(value = "主键id")
+    @TableField("ID")
+    private Integer id;
+
+    @ApiModelProperty(value = "用户名")
+    @TableField("USER_NAME")
+    private String userName;
+
+    @ApiModelProperty(value = "密码")
+    @TableField("PASSWORD")
     private String password;
 
-    @ApiModelProperty("用户手机")
-    private String mobile;
+
+    @Override
+    protected Serializable pkVal() {
+        return null;
+    }
+
 }

@@ -24,7 +24,8 @@ public class CodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setFileOverride(true);
+        // 不覆盖文件 这里小心点如果设置为true 不小心运行一次 你之前的改动就全没了
+        gc.setFileOverride(false);
         gc.setActiveRecord(true);
         gc.setOpen(false);
         gc.setSwagger2(true);
@@ -56,11 +57,16 @@ public class CodeGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
+        // 表前缀去掉
         strategy.setTablePrefix("t_data_");
+        // include 生成包含的表名 与exclude只能二选一
+        strategy.setEnableSqlFilter(false);
+        // enablesqlfilter 为false 支持正则
+        strategy.setInclude("t_data_user");
         // 表名生成策略
         strategy.setNaming(NamingStrategy.underline_to_camel);
         // 排除生成的表
-        strategy.setExclude("t_blog_user");
+//        strategy.setExclude("t_blog_user");
         strategy.setEntityLombokModel(true);
         mpg.setStrategy(strategy);
 

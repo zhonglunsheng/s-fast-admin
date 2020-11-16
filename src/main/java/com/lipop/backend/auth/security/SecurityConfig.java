@@ -1,6 +1,7 @@
 package com.lipop.backend.auth.security;
 
 import com.lipop.backend.auth.JwtAuthenticationTokenFilter;
+import com.lipop.backend.config.ProjectConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -53,6 +54,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private CorsFilter corsFilter;
 
+    @Autowired
+    private ProjectConfig.Auth configAuth;
+
     /**
      * 解决 无法直接注入 AuthenticationManager
      *
@@ -82,6 +86,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
+
+        // 判断是否启用Spring Security 如果不启动过滤所有url
+        if (configAuth.getSecurity() != null && configAuth.getSecurity()) {
+            httpSecurity.antMatcher("/**");
+            return;
+        }
+
         httpSecurity
                 // CSRF禁用，因为不使用session
                 .csrf().disable()
@@ -93,6 +104,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // 对于登录login 验证码captchaImage 允许匿名访问
                 .antMatchers("/login", "/captchaImage").anonymous()
+                .antMatchers("/h2-console/**").anonymous()
                 .antMatchers(
                         HttpMethod.GET,
                         "/*.html",
@@ -118,6 +130,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // 添加CORS filter
         httpSecurity.addFilterBefore(corsFilter, JwtAuthenticationTokenFilter.class);
         httpSecurity.addFilterBefore(corsFilter, LogoutFilter.class);
+
+
     }
 
 
