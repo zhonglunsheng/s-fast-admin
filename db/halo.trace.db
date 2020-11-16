@@ -251,3 +251,6 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:F:/project/G
 	at org.h2.mvstore.FileStore.open(FileStore.java:173)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
 	... 23 more
+2020-11-16 23:05:17 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DESC[*]  T_DATA_USER "; expected "DELETE, DROP, DECLARE, DEALLOCATE, {"; SQL statement:
+desc  t_data_user [42001-196]

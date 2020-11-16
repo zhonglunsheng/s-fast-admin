@@ -121,6 +121,14 @@
 		</dependency>
 	</dependencies>
 
+	<!-- 使用github当maven仓库	https://www.cnblogs.com/hellohello/p/11829042.html-->
+	<distributionManagement>
+		<repository>
+			<id>lipop-mvn-repo</id>
+			<url>file:${basedir}/repo</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
