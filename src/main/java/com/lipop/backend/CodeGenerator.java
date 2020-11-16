@@ -27,6 +27,7 @@ public class CodeGenerator {
         gc.setFileOverride(true);
         gc.setActiveRecord(true);
         gc.setOpen(false);
+        gc.setSwagger2(true);
         // XML 二级缓存
         gc.setEnableCache(true);
         // XML ResultMap
@@ -55,13 +56,13 @@ public class CodeGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setTablePrefix(new String[]{"t_blog_", "t_data_"});
+        strategy.setTablePrefix("t_data_");
         // 表名生成策略
         strategy.setNaming(NamingStrategy.underline_to_camel);
         // 排除生成的表
-        strategy.setExclude(new String[]{"t_blog_user"});
-        mpg.setStrategy(strategy);
+        strategy.setExclude("t_blog_user");
         strategy.setEntityLombokModel(true);
+        mpg.setStrategy(strategy);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
