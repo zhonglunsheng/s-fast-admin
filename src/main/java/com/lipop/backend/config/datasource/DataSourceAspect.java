@@ -1,6 +1,6 @@
-package com.lipop.backend.config.druid;
+package com.lipop.backend.config.datasource;
 
-import com.lipop.backend.config.druid.annotation.DataSource;
+import com.lipop.backend.config.datasource.annotation.DataSource;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -25,8 +25,8 @@ import java.util.Objects;
 public class DataSourceAspect {
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Pointcut("@annotation(com.lipop.backend.config.druid.annotation.DataSource)"
-            + "|| @within(com.lipop.backend.config.druid.annotation.DataSource)")
+    @Pointcut("@annotation(com.lipop.backend.config.datasource.annotation.DataSource)"
+            + "|| @within(com.lipop.backend.config.datasource.annotation.DataSource)")
     public void dsPointCut() {
 
     }

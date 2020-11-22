@@ -1,6 +1,6 @@
-package com.lipop.backend.config.druid.annotation;
+package com.lipop.backend.config.datasource.annotation;
 
-import com.lipop.backend.config.druid.DataSourceType;
+import com.lipop.backend.config.datasource.DataSourceType;
 
 import java.lang.annotation.*;
 

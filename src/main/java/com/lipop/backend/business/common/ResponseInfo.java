@@ -1,4 +1,4 @@
-package com.lipop.backend.business;
+package com.lipop.backend.business.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,28 +17,26 @@ public class ResponseInfo<T> {
     public String msg;
     public T data;
 
-    public ResponseInfo<T> createSuccess () {
+    public static <T> ResponseInfo createSuccess() {
         return new ResponseInfo<T>(CodeEnum.COMMON_SUCCESS.getCode(), CodeEnum.COMMON_SUCCESS.getMessage(), null);
     }
 
 
-    public ResponseInfo<T> createSuccess (T data) {
+    public static <T> ResponseInfo<T> createSuccess(T data) {
         return new ResponseInfo<T>(CodeEnum.COMMON_SUCCESS.getCode(), CodeEnum.COMMON_SUCCESS.getMessage(), data);
     }
 
-    public ResponseInfo<T> createFailure () {
+    public static <T> ResponseInfo<T> createFailure() {
         return new ResponseInfo<T>(CodeEnum.COMMON_SUCCESS.getCode(), CodeEnum.COMMON_SUCCESS.getMessage(), null);
     }
 
-    public ResponseInfo<T> createFailure (T data) {
+    public static <T> ResponseInfo<T> createFailure(T data) {
         return new ResponseInfo<T>(CodeEnum.COMMON_FAILURE.getCode(), CodeEnum.COMMON_FAILURE.getMessage(), data);
     }
 
-    public ResponseInfo<T> createCustomInfo (CodeEnum codeEnum, T data) {
+    public static <T> ResponseInfo<T> createCustomInfo(CodeEnum codeEnum, T data) {
         return new ResponseInfo<T>(codeEnum.getCode(), codeEnum.getMessage(), null);
     }
-
-
 
 
 }

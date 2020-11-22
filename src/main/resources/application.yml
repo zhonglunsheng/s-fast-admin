@@ -1,3 +1,28 @@
+server:
+  port: 8081
+
+# 项目相关配置
+project:
+  # 名称
+  name: lipop
+  # 版本
+  version: 1.0.0
+  # 功能开启
+  configuration:
+    auth:
+      # 是否启用jwt登录
+      login: false
+      # 是否开启Spring security
+      security: false
+
 spring:
   profiles:
     active: test
+
+  #热部署生效
+  devtools:
+    restart:
+      enabled: true
+      #设置重启的目录
+      additional-paths: src/main
+

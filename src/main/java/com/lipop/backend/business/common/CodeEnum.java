@@ -1,4 +1,4 @@
-package com.lipop.backend.business;
+package com.lipop.backend.business.common;
 
 import lombok.AllArgsConstructor;
 

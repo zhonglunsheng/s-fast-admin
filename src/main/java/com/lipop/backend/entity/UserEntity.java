@@ -19,7 +19,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("T_DATA_USER")
+@TableName("T_blog_USER")
 @ApiModel(value="UserEntity对象", description="")
 public class UserEntity extends Model<UserEntity> {
 

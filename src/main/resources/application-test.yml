@@ -1,21 +1,3 @@
-server:
-  port: 8081
-
-# 项目相关配置
-project:
-  # 名称
-  name: lipop
-  # 版本
-  version: 1.0.0
-  # 功能开启
-  configuration:
-    auth:
-      # 是否启用jwt登录
-      login: true
-      # 是否开启Spring security
-      security: false
-
-
 # token配置
 token:
   # 令牌自定义标识
@@ -37,22 +19,23 @@ swagger:
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    # H2 database configuration.
-    driver-class-name: org.h2.Driver
 
     druid:
       # 主库数据源
       master:
+        # H2 database configuration.
+        driver-class-name: org.h2.Driver
         url: jdbc:h2:file:./db/halo
         username: admin
         password: 123456
       # 从库数据源
       slave:
         # 从数据源开关/默认关闭
-        enabled: false
-        url:
-        username:
-        password:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        enabled: true
+        url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+        username: root
+        password: 123456
       # 初始连接数
       initialSize: 5
       # 最小连接池数量
@@ -104,3 +87,7 @@ logging:
   level:
     # 修复swagger 异常 https://blog.csdn.net/qq_35735865/article/details/86711871
     io.swagger.models.parameters.AbstractSerializableParameter: error
+
+mybatis-plus:
+  type-aliases-package: com.lipop.backend.entity
+  mapper-locations: classpath:com/lipop/backend/mapper/xml/*.xml

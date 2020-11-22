@@ -1,4 +1,4 @@
-package com.lipop.backend.config.druid;
+package com.lipop.backend.config.datasource;
 
 /**
  * 数据源

@@ -1,4 +1,4 @@
-package com.lipop.backend.interceptor;
+package com.lipop.backend.web.interceptor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

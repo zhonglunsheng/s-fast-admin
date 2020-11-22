@@ -22,3 +22,4 @@
 - 添加Swagger-ui logback日志框架
 - 添加多数据源和SpringSecurity权限框架
 - 添加代码自动生成
+- 引用mybatis-plus自动代码生成插件

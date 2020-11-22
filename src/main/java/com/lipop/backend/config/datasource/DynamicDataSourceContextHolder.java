@@ -1,4 +1,4 @@
-package com.lipop.backend.config.druid;
+package com.lipop.backend.config.datasource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

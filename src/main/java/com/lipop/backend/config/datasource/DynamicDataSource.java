@@ -1,4 +1,4 @@
-package com.lipop.backend.config.druid;
+package com.lipop.backend.config.datasource;
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 

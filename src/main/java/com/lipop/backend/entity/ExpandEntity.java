@@ -10,7 +10,7 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class ExplandEntity {
+public class ExpandEntity {
 
     private Integer id;
     private String url;

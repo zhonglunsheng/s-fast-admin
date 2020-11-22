@@ -1,7 +1,5 @@
-package com.lipop.backend.auth;
+package com.lipop.backend.auth.token;
 
-import com.lipop.backend.auth.token.TokenBasicService;
-import com.lipop.backend.auth.token.TokenUser;
 import com.lipop.backend.config.ProjectConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

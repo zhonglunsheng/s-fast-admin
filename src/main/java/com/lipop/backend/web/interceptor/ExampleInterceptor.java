@@ -1,6 +1,5 @@
-package com.lipop.backend.interceptor;
+package com.lipop.backend.web.interceptor;
 
-import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

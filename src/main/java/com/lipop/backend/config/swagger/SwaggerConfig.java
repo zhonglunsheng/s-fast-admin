@@ -1,5 +1,6 @@
-package com.lipop.backend.config;
+package com.lipop.backend.config.swagger;
 
+import com.lipop.backend.config.ProjectConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

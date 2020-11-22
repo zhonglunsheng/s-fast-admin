@@ -1,6 +1,6 @@
 package com.lipop.backend.auth.security;
 
-import com.lipop.backend.auth.JwtAuthenticationTokenFilter;
+import com.lipop.backend.auth.token.JwtAuthenticationTokenFilter;
 import com.lipop.backend.config.ProjectConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -88,7 +88,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
 
         // 判断是否启用Spring Security 如果不启动过滤所有url
-        if (configAuth.getSecurity() != null && configAuth.getSecurity()) {
+        if (configAuth.getSecurity() != null && !configAuth.getSecurity()) {
             httpSecurity.antMatcher("/**");
             return;
         }

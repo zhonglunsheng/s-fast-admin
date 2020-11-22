@@ -24,6 +24,7 @@ public class SysLoginService {
     @Resource
     private AuthenticationManager authenticationManager;
 
+
     /**
      * 登录验证
      *
